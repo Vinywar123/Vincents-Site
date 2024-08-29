@@ -22,16 +22,23 @@
         const ctx = canvas.getContext("2d");
 
     
-        var speed = .3;
+        var speed = 5;
         var PosX = 0;
         var PosY = 0;
         var interval = setInterval(update, 10);
         var i = 10;
+        var prerecorded = 1;
+        var Delta = 0
 
-  var Xdirection = 0.1
+        var ScreenWidth = 2000;
+        var ScreenHight = 1000;
+
+  
+  var Xdirection = 0
   var Ydirection = 0
   
   document.addEventListener('keydown', function(event) {
+    prerecorded = 0
       if(event.keyCode == 37) {
           Xdirection = -speed;
           Ydirection = 0;
@@ -53,20 +60,25 @@
 
     
   function update() {
-      
-    
+    Delta = Delta+.2
     ctx.fillStyle = "green";
-    PosX = PosX+Xdirection
-    PosY = PosY+Ydirection
+    PosX = (PosX+Xdirection)-(ScreenWidth*(Math.round((PosX+Xdirection)/ScreenWidth-0.5)))-(900*Math.round((PosY+Ydirection)/ScreenHight-0.5))
+    PosY = (PosY+Ydirection)-(ScreenHight*Math.round((PosY+Ydirection)/ScreenHight-0.5))
     
     ctx.fillRect(PosX, PosY, 10, 10);
+    if (prerecorded == 1){
+      if (Math.round(Math.sin(Delta)) == 1){
+        Xdirection = speed
+        Ydirection = 0
+      }
+      else if(Math.round(Math.sin(Delta)) == -1){
+        Xdirection = 0
+        Ydirection = speed
+      }
+      
+      }
     }
+
   </script>
-
-
-
-
-
-
 	  </body>
 	</html>
