@@ -5,21 +5,28 @@
 	    <title>Portfolio</title>
 	  </head>
 
+
 	  <body bgcolor="#FF8533">
+      <div id="Main-Content">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="aboutme.html">About Me</a>
+        <center>
+          <h2>Projects</h2>
+          <h1>Firework Project</h1>
+        <img src="images/Firework.PNG"></img>
+          <h1>Screen Rider</h1>
+        <img src="images/Gameplay.PNG"></img>
+          <h1>Christmas Card Project</h1>
+        <img src="images/Cristmas.PNG"></img>
+        </center>
+      </div>
 
-      <a href="index.html">Home</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="aboutme.html">About Me</a>
-      <center>
-        <h2>Projects</h2>
-        <h1>Firework Project</h1>
-      <img src="images/Firework.PNG"></img>
-        <h1>Screen Rider</h1>
-      <img src="images/Gameplay.PNG"></img>
-      </center>
+      <div id="canvas">
+        <canvas id="myCanvas" width="2000" height="1000">
+        </canvas>
+      </div>
 
-      <canvas id="myCanvas" width="2000" height="1000">
-      </canvas>
 
      <script>
        const canvas = document.getElementById("myCanvas");
